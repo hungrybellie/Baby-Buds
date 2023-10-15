@@ -1,7 +1,14 @@
 ![babyBudsLogo](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/a628213a-39bd-42d2-9e15-a7c37ba654de)
 
 # Who we are 🌱
-Baby Buds is an all in one platform for moms to find solace in community. Moms and moms-to-be can ask questions about their health, their baby's health, reach out for support and advocacy, and stock up on fellow moms' coveted tips and tricks. Babies grow up fast, and out of their clothes even faster! Baby Buds has a built-in marketplace where moms can trade, sell, or donate items! Be sure to check out the resources page for ways to make life as a mother easier.
+Baby Buds is an all in one platform for moms to find solace in community. 
+
+Moms and moms-to-be can ask questions about their health, their baby's health, reach out for support and advocacy, and stock up on fellow moms' coveted tips and tricks. 
+<img width="776" alt="Screenshot 2023-10-15 at 5 33 58 PM" src="https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/7ed0d8f6-47af-4124-b218-83a11e79d0e9">
+
+Babies grow up fast, and out of their clothes even faster! Baby Buds has a built-in marketplace where moms can trade, sell, or donate items!
+
+Be sure to check out the resources page for ways to make life as a mother easier.
 
 # Our Values 🫶
 - We strive to create a safe space for mothers to be seen and embraced. In a world wehre they are expected to know it all, we wan't moms to know that it's okay to ask for help, and that they deserve it.
