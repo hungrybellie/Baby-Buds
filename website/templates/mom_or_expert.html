@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Sign-Up{% endblock title %}
+
+{% block content %}
+<div>
+    <h3>I'm A...</h3>
+    <div>
+        <a href="/sign-up-mom"><img src="{{ url_for('static', filename='assets/mom.png') }}"></div></a>
+        <a href="/sign-up-expert"><img src="{{ url_for('static', filename='assets/expert.png') }}"></a>
+    </div>
+</div>
+
+{% endblock content %}

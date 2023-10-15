@@ -1,0 +1,126 @@
+{% extends "base.html "%}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<!-- Filter Buttons :D -->
+<div class="iconRow">
+  <img src="{{ url_for('static', filename='assets/babyHealth.png') }}" alt="Two small hearts titled Baby Health">
+  <img src="{{ url_for('static', filename='assets/tipsAndTricks.png') }}" alt="A packet of seeds titled Tips and Tricks">
+  <img src="{{ url_for('static', filename='assets/support.png') }}" alt="Two hands showing support and wearing gardening gloves titled Support">
+  <img src="{{ url_for('static', filename='assets/momHealth.png') }}" alt="A large heart titled Mom Health">
+</div>
+
+<!-- Make a post -->
+<div class="buttonCard">
+  <a href="/create-post"><img src="{{ url_for('static', filename='assets/createPost.png') }}" alt="Submit a post"></div></a>
+</div>
+  <!-- Blog post section -->
+  <section>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>Sample Blog Post<h2>
+                <h5>My Baby Bounces<h5>
+                <p>When I put my baby down, it bounces!</p>
+                
+                <!-- Comment Section -->
+                <div class="comment-section">
+                    <h4>Comments</h4>
+                    <div class="comment">
+                        <p><strong>User 1:</strong> This is a great post!</p>
+                    </div>
+                   
+                    <!-- Add more comments as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+    <section>
+      <div class="row">
+          <div class="leftcolumn">
+              <div class="card">
+                  <h2> Mom Who needs support</h2>
+                  <h5>My Baby Bounces</h5>
+                  <p> Resources for Latinx mom in Dallas Hospital</p>
+                  
+                  <!-- Comment Section -->
+                  <div class="comment-section">
+                      <h4>Comments</h4>
+                      <div class="comment">
+                          <p><strong>User 1:</strong> This is a great post!</p>
+                      </div>
+                
+                      <!-- Add more comments as needed -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2> Tips and Tricks Sample</h2>
+                <h5> Mom who needs tips and tricks</h5>
+                <p> how to prevent baby bouncing? </p>
+                
+                <!-- Comment Section -->
+                <div class="comment-section">
+                    <h4>Comments</h4>
+                    <div class="comment">
+                        <p><strong>User 1:</strong> This is a great post!</p>
+                    </div>
+                    
+                    <!-- Add more comments as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+  <div class="row">
+      <div class="leftcolumn">
+          <div class="card">
+              <h2> Tips and Tricks Sample</h2>
+              <h5> Mom who needs tips and tricks</h5>
+              <p> how to prevent baby bouncing? </p>
+              
+              <!-- Comment Section -->
+              <div class="comment-section">
+                  <h4>Comments</h4>
+                  <div class="comment">
+                      <p><strong>User 1:</strong> This is a great post!</p>
+                  </div>
+                  
+                  <!-- Add more comments as needed -->
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+
+  <!-- End of blog input -->
+
+<footer>
+  <div class="container">
+    <p>&copy; Hand me Down</p>
+  </div>
+</footer>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+

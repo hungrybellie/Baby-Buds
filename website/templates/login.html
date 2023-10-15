@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Hand Me Down Login{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    <div id="login-form" class="centered-form">
+        <h3>Login</h3>
+        <label for="email">Email Address</label>
+        <input 
+            class="form-control" 
+            type="email" 
+            id="email" 
+            name="email"
+            placeholder="Enter your email address"
+            required
+        />
+        <br>
+        <label for="password">Password</label>
+        <input 
+            class="form-control" 
+            type="password" 
+            id="password" 
+            name="password"
+            placeholder="Enter your password"
+            required
+        />
+        <br>
+        
+        <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="option1" 
+                name="user_type"
+                value="Expert"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/sprout.png') }}" alt="Expert"/>
+        </label>
+        <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="option2" 
+                name="user_type"
+                value="Mom"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/sprout.png') }}" alt="Mom"/>
+        </label>
+        <br>
+        <button type="submit" class="submit-buttons">Login</button>
+    </div>
+</form>
+{% endblock content %}

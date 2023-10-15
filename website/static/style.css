@@ -1,0 +1,367 @@
+/*
+    COLOURS <3
+
+    primaryGreen: "#898834",
+    secondaryGreen: "#afae65",
+    background: "#f5f2ed",
+    lightTeracotta: "#d27f57",
+    teracotta: "#b15e35"
+
+
+    FONTS <3
+
+    font-family: 'Rubik', sans-serif;
+*/
+
+body {
+  background-color: #f5f2ed;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+#logo {
+  width: 50em;
+  height: auto;
+}
+
+#title-row {
+  /* TODO: come back */
+  display: inline-block;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+header {
+  background-color: #f5f2ed;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  max-width: 100px; /* Adjust as needed */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav li:first-child {
+  margin-left: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.content {
+  padding: 20px;
+}
+
+footer {
+  background-color: #f9f9f9;
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+/* SIGNUP FORMS */
+/* --------------------------------------------- */
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 2px solid #afae65;
+}
+
+.avatar-img {
+  height: 5em;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* .submit-buttons {
+
+} */
+
+/* CENTERED FORMS */
+/* --------------------------------------------- */
+.centered-form {
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+/* NAVBAR STUFF */
+/* --------------------------------------------- */
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+ a
+ {
+   text-decoration: none;
+   color: #232323;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ a:hover
+ {
+   color: tomato;
+ }
+ 
+ #menuToggle
+ {
+   display: block;
+   position: absolute;
+   top: 50px;
+   right: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   opacity: 1;
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   width: 300px;
+   margin: -100px 0 0 0;
+   padding: 50px;
+   padding-top: 125px;
+   right: -100px;
+   
+   background: rgb(255, 255, 255);
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's fade it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+   opacity: 1;
+ }
+ 
+ @media screen and (max-width: 768px) {
+   #menu {
+     transform: none;
+     opacity: 0;
+ 
+     transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   }
+ }
+
+ /* BLOG POST CSS */
+/* Add a gray background color with some padding */
+.leftcolumn {
+  width: 90%;
+  margin: 0 auto; /* Center the element horizontally */
+}
+
+.rightcolumn {
+  width: 25%;
+  margin: 0 auto; /* Center the element horizontally */
+  padding-left: 20px;
+}
+
+.iconRow {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 50px;
+
+}
+
+.iconRow img {
+  height: 18%;
+  width: 18%;
+}
+
+.card {
+   background-color: #d27f57;
+   padding: 35px;
+   margin-top: 20px;
+   border-radius: 50px;
+   font-family: 'Roboto', sans-serif;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 90%;
+    padding: 0;
+  }
+}
+/* comment section for blog posts */
+.comment-section {
+  background-color: #f5f2ed;
+  color: black;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Adjust as needed to create space between the post and comments */
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.comment strong {
+  font-weight: bold;
+}
+
+.buttonCard {
+  background-color: #d27f57;
+  border-radius: 10px;
+  padding: 5px;
+}

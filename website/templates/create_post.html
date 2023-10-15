@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Create A Post{% endblock title %}
+
+{% block content %}
+<!-- id(?) title, content, date created(?), mauthor, comments, category -->
+<form method="POST">
+    <div class="centered-form">
+        <h3>Create A Post</h3>
+        <label for="title">Title</label>
+        <input 
+            class="form-control"
+            type="text" 
+            id="title"
+            name="title"
+            placeholder="Enter post title"
+            required
+        />
+        <br>
+        <label for="content">Content</label>
+        <input 
+            class="form-control"
+            type="text" 
+            id="content"
+            name="content"
+            placeholder=""
+            required
+        />
+        <br>
+        <!-- Revisit categories -->
+        <label>Select Category</label>
+        <br>
+        <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="baby_health" 
+                name="baby_health"
+                value="Baby Health"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/babyHealth.png') }}" alt="Mom"/>
+        </label>
+
+        <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="tips_and_tricks" 
+                name="tips_and_tricks"
+                value="Tips and Tricks"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/babyHealth.png') }}" alt="Mom"/>
+        </label>
+
+        <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="option2" 
+                name="user_type"
+                value="Mom"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/sprout.png') }}" alt="Mom"/>
+        </label>
+
+        <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="option2" 
+                name="user_type"
+                value="Mom"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/sprout.png') }}" alt="Mom"/>
+        </label>
+        <br>
+
+        <button type="submit">Submit Post</button>
+    </div>
+</form>
+{% endblock content %}
