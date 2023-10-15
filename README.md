@@ -1,7 +1,7 @@
 ![babyBudsLogo](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/a628213a-39bd-42d2-9e15-a7c37ba654de)
 
 # Who we are + What we do 🌱
-Baby Buds is an all in one platform for moms to find solace in community. 
+Baby Buds is an all in one platform for moms to find comfort and knowlegde in community. 
 
 ### The website's options:
 
