@@ -5,7 +5,7 @@ Baby Buds is an all in one platform for moms to find solace in community. Moms a
 
 # Our Values 🫶
 - We strive to create a safe space for mothers to be seen and embraced. In a world wehre they are expected to know it all, we wan't moms to know that it's okay to ask for help, and that they deserve it.
-- Our marketplace allows the plethora of child-care and baby-care items that are swiftly grown out of to find a new home. We do not want any items that can be tresured to end up in the landfill.
+- Our marketplace allows the plethora of child-care and baby-care items that are swiftly grown out of to find a new home. We do not want any items that can be tresured to end up in the landfill. Also, moms might be able to use the money they earn to support their kids and themself.
 
 
 # How We Protect Moms and their Children 🫂
