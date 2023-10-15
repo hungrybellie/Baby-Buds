@@ -3,6 +3,8 @@
 # Who we are + What we do 🌱
 Baby Buds is an all in one platform for moms to find solace in community. 
 
+The website's options:
+
 - Moms and moms-to-be can ask questions about their health, their baby's health, reach out for support and advocacy, and stock up on fellow moms' coveted tips and tricks. 
 - Babies grow up fast, and out of their clothes even faster! Baby Buds has a built-in marketplace where moms can trade, sell, or donate items!
 - Baby Buds provides a wide array of resources for moms to navigate this journey with the knowledge they need at their fingertips.
