@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% block title %}Hand Me Down Login{% endblock title %}
+
+{% block content %}
+  <section>
+    <div class="resourcesGrid">
+      <section id="resourcesRow" class="listingsRow">
+        <div class="resources1">
+          <h2>Medical Resources</h2>
+          <h5>The United States has one of the highest maternal morbidity rates in the Global north. This is partially due to embedded biases in the medical-industrial complex. Attached are some resources to stay proactive and informed.</h5>
+
+          <div class="flower-container">
+            <div class="flower-item">
+              <a href="https://www.mdcalc.com/calc/10433/vaginal-birth-after-cesarean-vbac">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Image">
+                  <div class="overlay-text">VBAC Calculator</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.mass.gov/doc/expecting-and-new-moms-resource-guide/download#:~:text=Providers%20or%20mothers%20can%20call,risk%20during%20pregnancy%20and%20lactation.&text=MassHealth%20encourages%20providers%20delivering%20care,mood%20disorders%20such%20as%20depression.">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Image">
+                  <div class="overlay-text">New Parent Resource Guide</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.mass.gov/info-details/check-eligibility-for-wic">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Image">
+                  <div class="overlay-text"> Nutrition resource </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://orwh.od.nih.gov/research/maternal-morbidity-and-mortality/information-for-women/diabetes-and-pregnancy">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Image">
+                  <div class="overlay-text"> Diabetes and Pregnancy </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.luriechildrens.org/en/specialties-conditions/pediatricians/resources-for-new-expecting-parents/">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Image">
+                  <div class="overlay-text"> Find a Doc in Boston </div>
+                </div>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <br>
+
+  <!-- mental health resources -->
+
+  <section>
+    <div class="resourcesGrid">
+      <section id="resourcesRow" class="listingsRow">
+        <div class="resources2">
+          <h2>Mental Health Resources</h2>
+          <h5> A Large and underestimated of Americans high morabidity rate is a lack of attention to the mental health of new and expecting parents</h5>
+
+          <div class="flower-container">
+            <div class="flower-item">
+              <a href="https://www.marchofdimes.org/find-support/blog/take-care-your-mental-health-during-pregnancy#:~:text=Pregnancy%20and%20childbirth%20can%20trigger,more%20serious%20mental%20health%20issues.">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/mom_2.png') }}" alt="Image">
+                  <div class="overlay-text"> mental health during pregnancy </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwig3f7egvmBAxVxNlkFHdrEB_QQFnoECB8QAQ&url=https%3A%2F%2Futswmed.org%2Fmedblog%2Fmedication-pregnancy%2F&usg=AOvVaw1JOKHj730BJWV3Q6nINxKs&opi=89978449">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/mom_2.png') }}" alt="Image">
+                  <div class="overlay-text"> Taking medicatons during pregnancy</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.marchofdimes.org/find-support/topics/postpartum/postpartum-depression#:~:text=What%20is%20postpartum%20depression%3F,long%20time%20after%20giving%20birth.">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/mom_2.png') }}" alt="Image">
+                  <div class="overlay-text"> Post-partum Depression </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.mass.gov/info-details/mental-health-crisis-support#:~:text=to%20learn%20more-,Mental%20health%20crisis%20resources,%2D877%2D870%2D4673.&text=Visit%20the%20new%20Massachusetts%20Network,Contact%20SAMHSA%27s%20Disaster%20Distress%20Helpline.">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/mom_2.png') }}" alt="Image">
+                  <div class="overlay-text"> Mental Health Crisis Support </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://mchb.hrsa.gov/national-maternal-mental-health-hotline#:~:text=The%20National%20Maternal%20Mental%20Health,833%2D852%2D6262).">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/mom_2.png') }}" alt="Image">
+                  <div class="overlay-text"> National Maternal Mental Health line</div>
+                </div>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <br>
+
+  <!-- diverse mamas -->
+  <section>
+    <div class="resourcesGrid">
+      <section id="resourcesRow" class="listingsRow">
+        <div class="resources3">
+          <h2>Resources for Diverse Parents</h2>
+          <h5> Black and Latinx maternal mortality is 2.6 times higher than the national average, with a lack of advocacy and appropriate training
+            being a highly contributive factor. Below are resources so when the time comes you know your rights </h5>
+
+          <div class="flower-container">
+            <div class="flower-item">
+              <a href="https://thenaabb.org">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="Image">
+                  <div class="overlay-text2"> National Association to Advance Black Birth</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.mother.ly/health-wellness/mental-health/cultural-bias-aapi-moms/">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="Image">
+                  <div class="overlay-text2"> Mental Health tips for expecting AAPI moms </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.care.com/c/latinx-pregnancy-birth-and-postpartum-resources/">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="Image">
+                  <div class="overlay-text2"> Resources for Latinx Parents </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.postpartum.net/get-help/queer-parents/#:~:text=PSI%27s%20Queer%20%26%20Trans%20Parent%20Support,non%2Dgestational%20and%20adoptive%20parents.">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="Image">
+                  <div class="overlay-text2"> Resources for LGBTQ+ & Trans Expecting Parents </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="flower-item">
+              <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjAkZf-hPmBAxXxMlkFHVW-BOsQFnoECBEQAw&url=https%3A%2F%2Fdrshahira.com%2Fpregnancy-resources-for-muslim-moms-free-printable%2F&usg=AOvVaw06ksRQ4V6mNwLE_3GU6OJx&opi=89978449">
+                <div class="image-overlay">
+                  <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="Image">
+                  <div class="overlay-text2"> Resources for Muslim parents expecting </div>
+                </div>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <br>
+{% endblock content %}

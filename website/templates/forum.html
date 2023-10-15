@@ -4,6 +4,18 @@
 {% block content %}
 
 <!-- Filter Buttons :D -->
+<br>
+<br>
+<br>
+
+<h1 class="titling">
+    The Forum
+</h1>
+
+<br>
+<br>
+<br>
+
 <div class="iconRow">
   <a class="icon-links" href="/baby-health"><img src="{{ url_for('static', filename='assets/babyHealth.png') }}" alt="Two small hearts titled Baby Health"></a>
   <a class="icon-links" href="/tips-and-tricks"><img src="{{ url_for('static', filename='assets/tipsAndTricks.png') }}" alt="A packet of seeds titled Tips and Tricks"></a>
@@ -49,19 +61,20 @@
                 </div>
                 {% endfor %}
 
-                {% if user.can_comment == 'true'%}
-                    <form method="POST" action="/create-comment/{{post.id}}">
-                        <label for="text">Add a Comment</label>
-                        <input 
-                            type="text" 
-                            id="comment"
-                            name="comment"
-                            placeholder="Write your response here"
-            
-                        />
-                        <button type="submit">Submit</button>
-                    </form>
-                {% endif %}
+                <br>
+                <form method="POST" action="/create-comment/{{post.id}}">
+                    <label for="text">Add a Comment</label>
+                    <input 
+                        class="form-control"
+                        type="text" 
+                        id="comment"
+                        name="comment"
+                        placeholder="Write your comment here"
+                    />
+                    <br>
+                    <button type="submit" class="submit-buttons">Submit</button>
+                </form>
+
                 <br>
             </div>
         </div>
@@ -71,19 +84,5 @@
 
 
   
-<footer>
-  <div class="container">
-    <p>Baby Buds, planted Oct 2023</p>
-  </div>
-</footer>
+
 {% endblock content %}
-
-
-
-
-
-
-
-
-
-

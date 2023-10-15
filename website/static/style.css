@@ -133,6 +133,14 @@ footer {
   margin-top: 5%;
 }
 
+#make-post-button {
+  border: none;
+  background-color: #d08c6a;
+  border-radius: 4px;
+  color: #f5f2ed;
+  padding: 4px 8px;
+}
+
 .im-a-img {
   height: 25em;
   width: auto;
@@ -194,17 +202,15 @@ footer {
  * prefixes.
  */
 
- a
- {
+ a {
    text-decoration: none;
-   color: #232323;
-   
-   transition: color 0.3s ease;
+   color: #afae65;
  }
  
  a:hover
  {
-   color: tomato;
+   text-decoration: none;
+   color: #afae65;
  }
  
  #menuToggle
@@ -248,7 +254,7 @@ footer {
    margin-bottom: 5px;
    position: relative;
    
-   background: #cdcdcd;
+   background: #898834;
    border-radius: 3px;
    
    z-index: 1;
@@ -278,7 +284,7 @@ footer {
  {
    opacity: 1;
    transform: rotate(45deg) translate(-2px, -1px);
-   background: #232323;
+   background: #898834;
  }
  
  /*
@@ -312,7 +318,7 @@ footer {
    padding-top: 125px;
    right: -100px;
    
-   background: rgb(255, 255, 255);
+   background: transparent;
    list-style-type: none;
    -webkit-font-smoothing: antialiased;
    /* to stop flickering of text in safari */
@@ -326,7 +332,12 @@ footer {
  #menu li
  {
    padding: 10px 0;
-   font-size: 22px;
+   font-size: 24px;
+   color: #898834;
+ }
+
+ #menu li:hover {
+  font-size: 28px;
  }
  
  /*
@@ -406,19 +417,20 @@ footer {
   margin-top: -3em;
 }
 
-.iconRow img {
-  height: 5em;
+.icon-links {
+  margin-bottom: -28em;
+  height: 40em;
   width: auto;
 }
 
 .iconRow img {
-  height: 18%;
+  height: 30%;
   width: auto;
 }
 
 .iconRow img:hover {
-  height: 20%;
-  width: 20%;
+  height: 33%;
+  width: auto;
 }
 
 .card {
@@ -448,7 +460,7 @@ footer {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  background-color: #f5f2ed;
   margin-top: 20px;
 }
 
@@ -491,13 +503,8 @@ footer {
 }
 
 .iconRowListings img{
-  height: 5%;
-  width: 5%;
-}
-
-.iconRowListings img:hover{
-  height: 7%;
-  width: 7%;
+  height: 8%;
+  width: 8%;
 }
 
 .listingsRow {
@@ -533,8 +540,6 @@ footer {
   justify-content: center; /* Add space between elements */
   align-items: center;
 }
-
-
 
 .product img {
   max-width: 100%;
@@ -613,6 +618,11 @@ footer {
 
 .filter {
   background-color: #f5f2ed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 #ageFilter {
@@ -635,4 +645,97 @@ footer {
   align-items: center;
   justify-content: center;
   align-content: center;
+}
+
+.titling {
+text-align: center;
+font-family: 'Rubik', sans-serif;
+}
+
+/* RESOURCES CSS */
+.resourcesGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.resources1 {
+  background-color: #d27f57;
+  padding: 30px;
+  border-radius: 20px;
+  font-family: 'Rubik', sans-serif;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 1300px; /* Set a maximum width */
+  display: block; /* Display as block to cover the entire width */
+  width: 1000px; /* Cover the entire width */
+  margin-left: 180px;
+  color: white;
+}
+
+.resources2 {
+  background-color: #e9af92;
+  padding: 30px;
+  border-radius: 20px;
+  font-family: 'Rubik', sans-serif;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 1300px; /* Set a maximum width */
+  display: block; /* Display as block to cover the entire width */
+  width: 1000px; /* Cover the entire width */
+  margin-left: 180px;
+  color: white;
+}
+
+.resources3 {
+  background-color: rgb(244, 207, 188);
+  padding: 30px;
+  border-radius: 20px;
+  font-family: 'Rubik', sans-serif;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 1300px; /* Set a maximum width */
+  display: block; /* Display as block to cover the entire width */
+  width: 1000px; /* Cover the entire width */
+  margin-left: 180px;
+  color: rgb(0, 0, 0);
+}
+
+.resourcesRow {
+  gap: 50px; /* Add gap between grid items */
+}
+
+/* Adjusted CSS to arrange items horizontally */
+.resourcesGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flower-container {
+  display: flex;
+}
+
+.flower-item {
+  margin: 0 10px; /* Adjust margin between flowers */
+}
+
+.image-overlay {
+  text-align: center; /* Center the content */
+}
+
+.image-overlay img {
+  display: block;
+  margin: 0 auto;
+  width: 100px; /* Adjust image width as needed */
+  height: auto;
+}
+
+.overlay-text {
+  margin-top: 10px;
+  color: white;
+}
+
+.overlay-text2 {
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
 }

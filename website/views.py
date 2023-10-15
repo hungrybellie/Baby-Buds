@@ -2,6 +2,9 @@ from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_required, current_user
 from .models import Post, Mom, Product, Expert, Comment
 from . import db
+import smtplib
+from email.message import EmailMessage
+import webbrowser
 
 views = Blueprint("views", __name__)
 
@@ -14,6 +17,9 @@ def forum():
     posts = Post.query.all()
     return render_template("forum.html", user=current_user, posts=posts)
 
+@views.route("/resources")
+def resources():
+    return render_template("resources.html", user=current_user)
 
 @views.route("/profile", methods=["GET", "POST"])
 @login_required
@@ -66,8 +72,6 @@ def create_post():
         post_title = request.form.get('title')
         post_content = request.form.get('content')
         category = request.form.get('category')
-
-        print(category)
 
         if not post_content:
             flash('Post cannot be empty', category='error')
@@ -142,20 +146,26 @@ def delete_comment(comment_id):
 def list_product():
     if request.method == "POST":
         name = request.form.get('name')
+        age = request.form.get('age')
+        category = request.form.get('category')
         description = request.form.get('description')
         price = request.form.get('price')
-        tags = request.form.getlist('tags')
-        img = request.form.get('img')
+        # DONT DO THIS AT HOME <3
+        image = request.files['file'] 
+        image.save(f"website/static/assets/{image.filename}")   
 
         if not name:
             flash('Please remember to add a name to your product <3', category='error')
         elif not price:
             flash('Please remember to add a price to your product, or 0.00!')
-        elif not tags:
-            flash('Please remember to add tags to your product, or 0.00!')
+        elif not category:
+            flash('Please remember to add a category to your product, or 0.00!')
         else:
-            product = Product(name=name, description=description, mauthor=current_user.id, price=price, tags=','.join(tags), img=img)
+            print("This ran")
+            product = Product(name=name, age=age, description=description, mauthor=current_user.id, price=price, category=category, img=image.filename)
+            print("This ran pt2")
             db.session.add(product)
+            print("This ran pt3")
             db.session.commit()
             flash('Product created!', category='success')
             return redirect(url_for('views.hand_me_down'))
@@ -177,3 +187,16 @@ def delete_product(product_id):
         db.session.commit()
 
     return redirect(url_for('views.hand_me_down'))
+
+
+# EMAIL SENDING
+#---------------------------
+@views.route("/send-email/<email1>/<prod_name>", methods=['GET', 'POST'])
+def send_email(email1, prod_name):
+    if request.method == "POST":
+        subject = f"Inquiring About: {prod_name}"
+        gmail_url = f'https://mail.google.com/mail/?view=cm&fs=1&to={email1}&su={subject}'
+        webbrowser.open(gmail_url)
+        return redirect(url_for("views.hand_me_down"))
+
+    return render_template("hand_me_down.html", user=current_user)

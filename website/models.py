@@ -44,10 +44,11 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False)
     description = db.Column(db.String(20))
+    age = db.Column(db.String(32), nullable=False)
     mauthor = db.Column(db.Integer, db.ForeignKey(
         'mom.id', ondelete="CASCADE"), nullable=False)
     price = db.Column(db.Integer(), nullable=False)
-    tags = db.Column(db.String(200))
+    category = db.Column(db.String(200))
     img = db.Column(db.String(200))
 
 

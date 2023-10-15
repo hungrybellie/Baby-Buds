@@ -18,10 +18,13 @@
         <br>
         <label for="content">Content</label>
         <textarea name="content" id="content" class="form-control"></textarea>
+    
         <br>
+
         <!-- Revisit categories -->
         <label>Select Category</label>
         <br>
+        <div class="categoryIcon">
         <label>
             <input 
                 class="form-control" 
@@ -68,9 +71,17 @@
             />
             <img class="avatar-img" src="{{ url_for('static', filename='assets/momHealth.png') }}" alt="Mom"/>
         </label>
+    </div>
+        <br>
+        <br>
         <br>
         
-        <button type="submit">Submit Post</button>
+        <button type="submit" class="submit-buttons">Submit Post</button>
+
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
     
 </form>

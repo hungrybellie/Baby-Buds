@@ -3,7 +3,6 @@
 
 
 {% block content %}
-
 <!-- filter icons for age -->
 <div class="iconRowListings">
     <img src="{{ url_for('static', filename='assets/seedling.png') }}" alt="Two small hearts titled Baby Health">
@@ -12,6 +11,12 @@
     <img src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Two hands showing support and wearing gardening gloves titled Support">
     <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="A large heart titled Mom Health">
 </div>
+
+<br>
+
+<h1 class="titling">The Marketplace</h1>
+
+<br>
 
 <div class="filter">
     <section id="categories">
@@ -31,141 +36,77 @@
             <option value="misc">Materials/Misc</option>
         </select>
       </section> 
-      <div style="text-align: center;"><a href="/list-product"><button id="submit-listing-button">Submit a listing</button></a></div>
 </div>
 
+<br>
+
+<div style="text-align: center;"><a href="/list-product"><button id="submit-listing-button">Submit a Listing</button></a></div>
+
+<br>
+
   <!-- Blog post section -->
-    <section>
-        <div class="listingsGrid">
-          <section id="productListings" class="listingsRow">
-                <div class="listing" data-age="newborn" product-type="furniture">
-                      <!-- Product listings go here -->
-                    <div class="product">
-                      <img src="{{ url_for('static', filename='assets/product1.png') }}" >
-                      <h3> Used Crib</h3>
-                        <p> Giving away a used crib. Brown, comes with mattress and Ill provide bedding. Has a few 
-                          scratches.
-                        </p>
-                        <button class="inquireButton" onclick="inquireProduct('Used Crib')">Inquire</button>
-                      </div>
-                    <!-- Add more product listings as needed -->
-                </div>
-
-                <div class="listing" data-age="infant, newborn" product-type="Materials/Misc">
-                    <!-- Product listings go here -->
-                  <div class="product">
-                      <img src="product1.jpg" alt="Product 2">
-                      <h3> Baby Bottles</h3>
-                      <p>Have set of 4 baby bottles im giving away, comes with sanitization kit for nips. My 4month old loved them.</p>
-                      <button class="inquireButton" onclick="inquireProduct('Baby Bottles')">Inquire</button>
-                    </div>
-                  <!-- Add more product listings as needed -->
-              </div>
-
-              <div class="listing" data-age="newborn" product-type="clothes">
-                <!-- Product listings go here -->
-              <div class="product"> 
-                  <img src="product1.jpg" alt="Product 3">
-                  <h3>newborn clothing!</h3>
-                  <p>Open to bartering newborn clothing for 6month old clothing. I have hats, mittens, onesies as well as a few boxes of diapers and formula.</p>
-                  <button class="inquireButton" onclick="inquireProduct('Newborn Clothing')">Inquire</button>
-              </div>
-              <!-- Add more product listings as needed -->
-          </div>
-
-          <div class="listing" data-age="toddler" product-type="toys">
-            <!-- Product listings go here -->
+<section>
+  <div class="listingsGrid">
+    <section id="productListings" class="listingsRow">
+      {% for product in products %}
+        <div class="listing" data-age="{{ product.age }}" product-type="{{ product.category }}">
           <div class="product">
-              <img src="product1.jpg" alt="Product 4">
-              <h3>Legos!</h3>
-              <p>My son has grown out of using the larger building block legos. Giving them away</p>
-              <button class="inquireButton" onclick="inquireProduct('Legos')">Inquire</button>
-            </div>
-          <!-- Add more product listings as needed -->
-      </div>
-
-            <!-- Product listings go here -->
-            <div class="listing" data-age="infant" product-type="clothes">
-              <div class="product">
-                  <img src="product2.jpg" alt="Product 2">
-                  <h3>Knitted wear</h3>
-                  <p> Giving away knitted hat, gloves, mittens and shawl for 4-7 month old. </p>
-                  <button class="inquireButton" onclick="inquireProduct('Inquire')">Inquire</button>
-              </div>
+            <img src="{{ url_for('static', filename='assets/' ~ product.img) }}" >
+            <br><br>
+            <h3> {{ product.name }} </h3>
+            <p> {{ product.description }}</p>
+            <form method="POST" action="/send-email/{{ product.mom.email}}/{{ product.name }}">
+              <!--  onclick="inquireProduct('{{ product.name|tojson|safe }}')" -->
+              <button type="submit" class="inquireButton">Inquire</button>
+            </form>
           </div>
-          <!-- Add more product listings as needed -->
-
-          <div class="listing" data-age="toddler" product-type="toys">
-            <!-- Product listings go here -->
-          <div class="product">
-              <img src="product1.jpg" alt="Product 4">
-              <h3>Legos!</h3>
-              <p>My son has grown out of using the larger building block legos. Giving them away</p>
-              <button class="inquireButton" onclick="inquireProduct('Legos')">Inquire</button>
-            </div>
-          <!-- Add more product listings as needed -->
-      </div>
-        <!-- Add more product listings as needed -->
         </div>
-
-          
+      {% endfor %}
     </section>
-      <script>
-        function inquireProduct(productName) {
-          var email = 'example@gmail.com'; // Replace with your email
-          var subject = 'Inquiry about ' + productName;
-          var body = `Dear Seller,\n\nI am emailing regarding an interest in ${productName}. Any information regarding the availability and/or price would be greatly appreciated.\n\nSincerely,\nfellow BabyBuddy`;
-          var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-          window.location.href = mailtoLink;
-        }
-        // filter the products based on the age input by user
-        function filterProductsByAge(age) {
-        var listings = document.querySelectorAll('.listing');
-        listings.forEach(function(listing) {
-            var ageFilter = listing.getAttribute('data-age');
-            if (age === 'all' || ageFilter.includes(age)) {
-                listing.style.display = 'block';
-            } else {
-                listing.style.display = 'none';
-            }
-        });
-    }   
-        function filterProductsByType(type) {
-        var listings = document.querySelectorAll('.listing');
-        listings.forEach(function(listing) {
-            var typeFilter = listing.getAttribute('product-type');
-            if (type === 'all' || typeFilter.includes(type)) {
-                listing.style.display = 'block';
-            } else {
-                listing.style.display = 'none';
-            }
-        });
-    }
+  </div>
+</section>
 
+<script>
+      // filter the products based on the age input by user
+      function filterProductsByAge(age) {
+      var listings = document.querySelectorAll('.listing');
+      listings.forEach(function(listing) {
+          var ageFilter = listing.getAttribute('data-age');
+          if (age === 'all' || ageFilter.includes(age)) {
+              listing.style.display = 'block';
+          } else {
+              listing.style.display = 'none';
+          }
+      });
+      }   
+      
+      function filterProductsByType(type) {
+      var listings = document.querySelectorAll('.listing');
+      listings.forEach(function(listing) {
+          var typeFilter = listing.getAttribute('product-type');
+          if (type === 'all' || typeFilter.includes(type)) {
+              listing.style.display = 'block';
+          } else {
+              listing.style.display = 'none';
+          }
+      });
+  }
 
-    
-
-        // Event listener for age filter dropdown
-        var ageFilterDropdown = document.getElementById('ageFilter');
-        ageFilterDropdown.addEventListener('change', function() {
-            var selectedAge = this.value;
-            filterProductsByAge(selectedAge);
-        });
-
-              var categoryFilterDropdown = document.getElementById('categoryFilter');
-            categoryFilterDropdown.addEventListener('change', function() {
-            var selectedCategory = this.value;
-                filterProductsByType(selectedCategory);
+  // Event listener for age filter dropdown
+  var ageFilterDropdown = document.getElementById('ageFilter');
+      ageFilterDropdown.addEventListener('change', function() {
+          var selectedAge = this.value;
+          filterProductsByAge(selectedAge);
       });
 
+            var categoryFilterDropdown = document.getElementById('categoryFilter');
+          categoryFilterDropdown.addEventListener('change', function() {
+          var selectedCategory = this.value;
+              filterProductsByType(selectedCategory);
+    });
+</script>
 
 
-      </script>
 
-      <footer>
-        <div class="container">
-          <p>Baby Buds, planted Oct 2023</p>
-        </div>
-      </footer>
-      {% endblock content %}
+{% endblock content %}
         
