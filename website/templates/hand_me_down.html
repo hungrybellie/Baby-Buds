@@ -1,0 +1,112 @@
+{% extends "base.html "%}
+{% block title %}Baby Buds{% endblock title %}
+
+
+{% block content %}
+<!-- filter icons for age -->
+<div class="iconRowListings">
+    <img src="{{ url_for('static', filename='assets/seedling.png') }}" alt="Two small hearts titled Baby Health">
+    <img src="{{ url_for('static', filename='assets/babySprout.png') }}" alt="Two small hearts titled Baby Health">
+    <img src="{{ url_for('static', filename='assets/buddingSprout.png') }}" alt="A packet of seeds titled Tips and Tricks">
+    <img src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Two hands showing support and wearing gardening gloves titled Support">
+    <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="A large heart titled Mom Health">
+</div>
+
+<br>
+
+<h1 class="titling">The Marketplace</h1>
+
+<br>
+
+<div class="filter">
+    <section id="categories">
+        <select id="ageFilter">
+            <option value="all">All Ages</option>
+            <option value="newborn">Newborn</option>
+            <option value="infant">Infant</option>
+            <option value="toddler">Toddler</option>
+            <option value="child">Child</option>
+        </select>
+        
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="clothes">Clothes</option>
+            <option value="toys">Toys</option>
+            <option value="furniture">Furniture</option>
+            <option value="misc">Materials/Misc</option>
+        </select>
+      </section> 
+</div>
+
+<br>
+
+<div style="text-align: center;"><a href="/list-product"><button id="submit-listing-button">Submit a Listing</button></a></div>
+
+<br>
+
+  <!-- Blog post section -->
+<section>
+  <div class="listingsGrid">
+    <section id="productListings" class="listingsRow">
+      {% for product in products %}
+        <div class="listing" data-age="{{ product.age }}" product-type="{{ product.category }}">
+          <div class="product">
+            <img src="{{ url_for('static', filename='assets/' ~ product.img) }}" >
+            <br><br>
+            <h3> {{ product.name }} </h3>
+            <p> {{ product.description }}</p>
+            <form method="POST" action="/send-email/{{ product.mom.email}}/{{ product.name }}">
+              <!--  onclick="inquireProduct('{{ product.name|tojson|safe }}')" -->
+              <button type="submit" class="inquireButton">Inquire</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  </div>
+</section>
+
+<script>
+      // filter the products based on the age input by user
+      function filterProductsByAge(age) {
+      var listings = document.querySelectorAll('.listing');
+      listings.forEach(function(listing) {
+          var ageFilter = listing.getAttribute('data-age');
+          if (age === 'all' || ageFilter.includes(age)) {
+              listing.style.display = 'block';
+          } else {
+              listing.style.display = 'none';
+          }
+      });
+      }   
+      
+      function filterProductsByType(type) {
+      var listings = document.querySelectorAll('.listing');
+      listings.forEach(function(listing) {
+          var typeFilter = listing.getAttribute('product-type');
+          if (type === 'all' || typeFilter.includes(type)) {
+              listing.style.display = 'block';
+          } else {
+              listing.style.display = 'none';
+          }
+      });
+  }
+
+  // Event listener for age filter dropdown
+  var ageFilterDropdown = document.getElementById('ageFilter');
+      ageFilterDropdown.addEventListener('change', function() {
+          var selectedAge = this.value;
+          filterProductsByAge(selectedAge);
+      });
+
+            var categoryFilterDropdown = document.getElementById('categoryFilter');
+          categoryFilterDropdown.addEventListener('change', function() {
+          var selectedCategory = this.value;
+              filterProductsByType(selectedCategory);
+    });
+</script>
+
+
+
+{% endblock content %}
+        

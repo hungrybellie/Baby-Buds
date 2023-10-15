@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Sign-Up{% endblock title %}
+
+{% block content %}
+<div class="signUpAsA">
+    <h2 style="text-align: center; font-weight: bold;">Signup as a...</h2>
+    <div id="signup-options-div">
+        <a href="/sign-up-mom"><img class="im-a-img" src="{{ url_for('static', filename='assets/mom_2.png') }}"></div></a>
+        <a href="/sign-up-expert"><img class="im-a-img" src="{{ url_for('static', filename='assets/expert_2.png') }}"></a>
+    </div>
+</div>
+
+{% endblock content %}
