@@ -21,5 +21,5 @@ Baby Buds is an all in one platform for moms to find solace in community.
 
 ![Untitled design (2)](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/7e7e829d-4812-409a-99d8-184d89aa8aa7)
 
-![Untitled design (4)](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/30318a1c-fbd8-46fa-aeea-f1cffb2d3bb4)
+![Untitled design (4)](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/a2db736b-fa5a-4c02-8c03-ea0e4afa8fb9)
 
