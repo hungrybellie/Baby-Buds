@@ -4,7 +4,6 @@
 Baby Buds is an all in one platform for moms to find comfort and knowlegde in community. 
 
 ### The website provides:
-
 - a question forum for moms to ask about their health, their baby's health, reach out for support and advocacy, and stock up on fellow moms' coveted tips and tricks. 
 - a built-in marketplace where moms can trade, sell, or donate items!
 - a wide array of resources for moms to navigate this journey with the knowledge they need at their fingertips.
@@ -19,6 +18,12 @@ Baby Buds is an all in one platform for moms to find comfort and knowlegde in co
 # How we protect moms and their children 🫂
 - Our platform only allows experts (gynecologist, dietitions, pediatricians and other health care workers) to answer the health related questions to protect against misinformation.
 - Our platform utilizes elegant flower drawings to ensure profile pictures do not reveal babies' identities.
+
+# Technical achievemnts
+- the ability to create an account as either a mom or an expert (medical professionals).
+- text-based posting and commenting
+- posting listings for items on the marketplace
+- inquiring about listings for items on the marketplace
 
 # Screen Gallery 🖼️
 
