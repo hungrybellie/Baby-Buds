@@ -16,3 +16,7 @@ Baby Buds is an all in one platform for moms to find solace in community.
 # How we protect moms and their children 🫂
 - Our platform only allows experts (gynecologist, dietitions, pediatricians and other health care workers) to answer the health related questions to protect against misinformation.
 - Our platform utilizes elegant flower drawings to ensure profile pictures do not reveal babies' identities.
+
+# Gallery 🖼️
+<img width="1728" alt="Screenshot 2023-10-15 at 5 34 58 PM" src="https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/de85227f-9046-4d62-8f48-643b06a693f1">
+<img width="1728" alt="Screenshot 2023-10-15 at 5 34 54 PM" src="https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/70341a9d-1f68-4a3e-b5ad-840f66b6dd1e">
