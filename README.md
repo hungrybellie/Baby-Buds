@@ -19,7 +19,7 @@ Baby Buds is an all in one platform for moms to find comfort and knowlegde in co
 - Our platform only allows experts (gynecologist, dietitions, pediatricians and other health care workers) to answer the health related questions to protect against misinformation.
 - Our platform utilizes elegant flower drawings to ensure profile pictures do not reveal babies' identities.
 
-# Technical achievemnts
+# Technical achievemnts 👩‍💻
 - the ability to create an account as either a mom or an expert (medical professionals).
 - text-based posting and commenting
 - posting listings for items on the marketplace
