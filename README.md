@@ -19,7 +19,5 @@ Baby Buds is an all in one platform for moms to find solace in community.
 
 # Gallery 🖼️
 
-![Untitled design (1)](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/952e429a-99f9-4c0a-b11c-7359727c562a)
-
-![Untitled design (2)](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/909fb42a-bc4f-4a44-9e9c-3f002b338c9d)
-
+![Untitled design (3)](https://github.com/Mandy-cyber/Baby-Buds/assets/63426032/b0c2b765-2cd4-45b3-986d-90ed929700c2)
+[Untitled design.zip](https://github.com/Mandy-cyber/Baby-Buds/files/12910761/Untitled.design.zip)
