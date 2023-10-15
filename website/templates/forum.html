@@ -1,116 +1,79 @@
 {% extends "base.html "%}
-{% block title %}Home{% endblock title %}
+{% block title %}Baby Buds{% endblock title %}
 
 {% block content %}
 
 <!-- Filter Buttons :D -->
 <div class="iconRow">
-  <img src="{{ url_for('static', filename='assets/babyHealth.png') }}" alt="Two small hearts titled Baby Health">
-  <img src="{{ url_for('static', filename='assets/tipsAndTricks.png') }}" alt="A packet of seeds titled Tips and Tricks">
-  <img src="{{ url_for('static', filename='assets/support.png') }}" alt="Two hands showing support and wearing gardening gloves titled Support">
-  <img src="{{ url_for('static', filename='assets/momHealth.png') }}" alt="A large heart titled Mom Health">
+  <a class="icon-links" href="/baby-health"><img src="{{ url_for('static', filename='assets/babyHealth.png') }}" alt="Two small hearts titled Baby Health"></a>
+  <a class="icon-links" href="/tips-and-tricks"><img src="{{ url_for('static', filename='assets/tipsAndTricks.png') }}" alt="A packet of seeds titled Tips and Tricks"></a>
+  <a class="icon-links" href="/support"><img src="{{ url_for('static', filename='assets/support.png') }}" alt="Two hands showing support and wearing gardening gloves titled Support"></a>
+  <a class="icon-links" href="/mom-health"><img src="{{ url_for('static', filename='assets/momHealth.png') }}" alt="A large heart titled Mom Health"></a>
 </div>
 
 <!-- Make a post -->
-<div class="buttonCard">
-  <a href="/create-post"><img src="{{ url_for('static', filename='assets/createPost.png') }}" alt="Submit a post"></div></a>
-</div>
+{% if user.can_comment == "false" %}
+    <div style="text-align: center;"><a href="/create-post"><button id="make-post-button">Make a Post</button></a></div>
+{% endif%} 
+
   <!-- Blog post section -->
-  <section>
-    <div class="row">
-        <div class="leftcolumn">
-            <div class="card">
-                <h2>Sample Blog Post<h2>
-                <h5>My Baby Bounces<h5>
-                <p>When I put my baby down, it bounces!</p>
-                
-                <!-- Comment Section -->
-                <div class="comment-section">
-                    <h4>Comments</h4>
-                    <div class="comment">
-                        <p><strong>User 1:</strong> This is a great post!</p>
-                    </div>
-                   
-                    <!-- Add more comments as needed -->
+  {% for post in posts %}
+    <div class="container mt-1">
+        <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{{ url_for('static', filename='assets/flowers.png') }}" alt="User Icon" class="img-fluid">
+                </div>
+                <div class="col-8">
+                    <h2>{{ post.title }}</h2>
+                    <h5 class="card-title">{{ post.mom.username }}</h5>
+                </div>
+                <div class="col-2 text-right">
+                    {% if user.id == post.mom.id and user.can_comment == 'false' %}
+                    <a href="/delete-post/{{post.id}}" class="compost-button">
+                        <img class="compost-image" src="{{ url_for('static', filename='assets/compost_bin.png') }}">
+                    </a>
+                    {% endif %}
                 </div>
             </div>
-        </div>
-    </div>
-  </section>
+            
+            <p class="card-text">{{ post.content }}</p>
 
-    <section>
-      <div class="row">
-          <div class="leftcolumn">
-              <div class="card">
-                  <h2> Mom Who needs support</h2>
-                  <h5>My Baby Bounces</h5>
-                  <p> Resources for Latinx mom in Dallas Hospital</p>
-                  
-                  <!-- Comment Section -->
-                  <div class="comment-section">
-                      <h4>Comments</h4>
-                      <div class="comment">
-                          <p><strong>User 1:</strong> This is a great post!</p>
-                      </div>
-                
-                      <!-- Add more comments as needed -->
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section>
-    <div class="row">
-        <div class="leftcolumn">
-            <div class="card">
-                <h2> Tips and Tricks Sample</h2>
-                <h5> Mom who needs tips and tricks</h5>
-                <p> how to prevent baby bouncing? </p>
-                
-                <!-- Comment Section -->
-                <div class="comment-section">
-                    <h4>Comments</h4>
-                    <div class="comment">
-                        <p><strong>User 1:</strong> This is a great post!</p>
-                    </div>
-                    
-                    <!-- Add more comments as needed -->
+            <!-- Comment Section -->
+            <div class="comment-section">
+                <h4>Comments</h4>
+                {% for comment in post.comments %}
+                <div class="comment">
+                    <p><strong>{{ comment.expert.username }}</strong> {{ comment.text }}</p>
                 </div>
+                {% endfor %}
+
+                {% if user.can_comment == 'true'%}
+                    <form method="POST" action="/create-comment/{{post.id}}">
+                        <label for="text">Add a Comment</label>
+                        <input 
+                            type="text" 
+                            id="comment"
+                            name="comment"
+                            placeholder="Write your response here"
+            
+                        />
+                        <button type="submit">Submit</button>
+                    </form>
+                {% endif %}
+                <br>
             </div>
         </div>
     </div>
-</section>
-
-<section>
-  <div class="row">
-      <div class="leftcolumn">
-          <div class="card">
-              <h2> Tips and Tricks Sample</h2>
-              <h5> Mom who needs tips and tricks</h5>
-              <p> how to prevent baby bouncing? </p>
-              
-              <!-- Comment Section -->
-              <div class="comment-section">
-                  <h4>Comments</h4>
-                  <div class="comment">
-                      <p><strong>User 1:</strong> This is a great post!</p>
-                  </div>
-                  
-                  <!-- Add more comments as needed -->
-              </div>
-            </div>
-        </div>
-    </div>
-  </section>
+</div>
+{% endfor %}
 
 
-
-  <!-- End of blog input -->
-
+  
 <footer>
   <div class="container">
-    <p>&copy; Hand me Down</p>
+    <p>Baby Buds, planted Oct 2023</p>
   </div>
 </footer>
 {% endblock content %}

@@ -11,6 +11,14 @@
     FONTS <3
 
     font-family: 'Rubik', sans-serif;
+
+    CENTERING DIVS <3
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 */
 
 body {
@@ -20,7 +28,8 @@ body {
 }
 
 #logo {
-  width: 50em;
+  margin-top: -1em;
+  width: 45em;
   height: auto;
 }
 
@@ -78,9 +87,25 @@ footer {
   text-align: center;
 }
 
+/* MOM OR EXPERT */
+/* --------------------------------------------- */
+
+.signUpAsA {
+  font-family: "Rubik", sans-serif;
+}
 
 /* SIGNUP FORMS */
 /* --------------------------------------------- */
+
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family:"Rubik", sans-serif; 
+}
+
 [type=radio] {
   position: absolute;
   opacity: 0;
@@ -97,20 +122,63 @@ footer {
 }
 
 .avatar-img {
-  height: 5em;
+  height: 9em;
   width: auto;
   border-radius: 50%;
 }
 
-/* .submit-buttons {
+#signup-options-div {
+  display: inline-block;
+  margin-left: 13%;
+  margin-top: 5%;
+}
 
-} */
+.im-a-img {
+  height: 25em;
+  width: auto;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.im-a-img:hover {
+  height: 27em;
+  width: auto;
+}
+
+.submit-buttons {
+  border: none;
+  background-color: #d08c6a;
+  border-radius: 4px;
+  color: #f5f2ed;
+  padding: 4px 8px;
+}
+
+.form-control {
+  background-color: #f5f2ed;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #898834;
+  width: 500px;
+}
 
 /* CENTERED FORMS */
 /* --------------------------------------------- */
-.centered-form {
-  margin-left: 10em;
-  margin-right: 10em;
+.categoryOptions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family:"Rubik", sans-serif; 
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family:"Rubik", sans-serif; 
 }
 
 /* NAVBAR STUFF */
@@ -280,41 +348,94 @@ footer {
  }
 
  /* BLOG POST CSS */
-/* Add a gray background color with some padding */
-.leftcolumn {
-  width: 90%;
-  margin: 0 auto; /* Center the element horizontally */
+ /* ------------------------------------------------------------------- */
+
+ .delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  right: -95%;
+  width: fit-content;
+  height: fit-content;
+  z-index: 2;
 }
 
-.rightcolumn {
-  width: 25%;
-  margin: 0 auto; /* Center the element horizontally */
-  padding-left: 20px;
+.post-heading {
+  display: inline-block;
+}
+
+.delete-button:hover {
+  background: none;
+  border: none;
+}
+
+.compost-image {
+  height: 3em;
+  width: auto;
+}
+
+.compost-image:hover {
+  height: 3.5em;
+  width: auto;
+}
+
+
+/* Add a gray background color with some padding */
+#make-post-button {
+  border-radius: .375em;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #dbdbdb;
+  cursor: pointer;
+  padding: .75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#make-post-button:hover {
+  border-color: #898834;
 }
 
 .iconRow {
-  padding: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   align-content: center;
-  gap: 50px;
+  margin-top: -3em;
+}
 
+.iconRow img {
+  height: 5em;
+  width: auto;
 }
 
 .iconRow img {
   height: 18%;
-  width: 18%;
+  width: auto;
+}
+
+.iconRow img:hover {
+  height: 20%;
+  width: 20%;
 }
 
 .card {
-   background-color: #d27f57;
-   padding: 35px;
-   margin-top: 20px;
+   background-color: #bbba86;
+   padding: 2em;
    border-radius: 50px;
-   font-family: 'Roboto', sans-serif;
+   width: 70em;
+   font-family: 'Rubi', sans-serif;
   }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -341,11 +462,9 @@ footer {
 /* comment section for blog posts */
 .comment-section {
   background-color: #f5f2ed;
-  color: black;
   padding: 20px;
-  border-radius: 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* Adjust as needed to create space between the post and comments */
+  border-radius: 8px;
+  color: black;
 }
 
 .comment {
@@ -360,8 +479,160 @@ footer {
   font-weight: bold;
 }
 
-.buttonCard {
-  background-color: #d27f57;
+
+.iconRowListings {
+  background-color: #afae6589;
   border-radius: 10px;
-  padding: 5px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.iconRowListings img{
+  height: 5%;
+  width: 5%;
+}
+
+.iconRowListings img:hover{
+  height: 7%;
+  width: 7%;
+}
+
+.listingsRow {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  gap: 50px; /* Add gap between grid items */
+}
+
+.listingsGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.listing {
+  background-color: #8cb6c4;
+  padding: 30px;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  font-family: 'Rubik', sans-serif;
+}
+
+.categories {
+  background-color: #ecf0f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: row; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Add space between elements */
+  align-items: center;
+}
+
+
+
+.product img {
+  max-width: 100%;
+}
+
+#inquiryModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.inquireButton {
+  background-color: #699fb1;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: white; /* Set the default text color */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition effect */
+}
+
+.inquireButton:hover {
+  background-color: white;
+  color: #699fb1;
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add a gray background color with some padding */
+#submit-listing-button {
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.5 rem;
+  background-color: #d08c6a;
+  color: white;
+  cursor: pointer;
+  padding: .5rem 1rem; /* Adjusted padding */
+  margin-bottom: 10px;
+  height: 40px;
+  width: 160px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+#submit-listing-button:hover {
+  background-color: #d280577d;
+}
+
+.filter {
+  background-color: #f5f2ed;
+}
+
+#ageFilter {
+  padding: 8px;
+  background-color: #f5f2ed;
+  border: none;
+}
+
+#categoryFilter {
+  padding: 8px;
+  background-color: #f5f2ed;
+  border: none;
+}
+
+.categoryIcon {
+  height: 7%;
+  width: 7%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }

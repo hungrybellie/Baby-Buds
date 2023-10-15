@@ -1,4 +1,169 @@
 {% extends "base.html" %}
-{% block title %}Hand Me Down{% endblock title %}
+{% block title %}List a Product{% endblock title %}
 
-{% block content %}{% endblock content %}
+{% block content %}
+<form method="POST">
+    <div class="productDetails">
+        <h3>List product</h3>
+        <br>
+        <label for="title">Name of product</label>
+        <input 
+            class="form-control"
+            type="text" 
+            id="title"
+            name="title"
+            placeholder="Post title"
+            required
+        />
+        <br>
+        <label for="date_age">Select Date-Age</label>
+        <select id="date_age" name="date_age" class="form-control">
+            <option value="newborn">Newborn</option>
+            <option value="infant">Infant</option>
+            <option value="toddler">Toddler</option>
+            <option value="child">Child</option>
+        </select>
+        <br>
+        <label for="product_type">Select Product Type</label>
+        <select id="product_type" name="product_type" class="form-control">
+            <option value="clothes">Clothes</option>
+            <option value="furniture">Furniture</option>
+            <option value="materials_misc">Materials/Misc</option>
+            <option value="toys">Toys</option>
+        </select>
+
+       
+
+        <br>
+        <br>
+        <label for="content">Description</label>
+        <textarea name="content" id="content" class="form-control"></textarea>
+        <br>
+      
+        <input 
+        class="form-control" 
+        type="file" 
+        id="image" 
+        name="image"
+        accept="image/*"
+        required
+    />
+
+        <div class="categoryOptions">
+            <label for="image">Product Image</label>
+         
+            <br>
+            <label>
+                <input 
+                    class="form-control" 
+                    type="radio" 
+                    id="newborn" 
+                    name="category"
+                    value="Newborn"
+                    data-age="newborn"
+                    required
+                />
+                <img class="avatar-img" src="{{ url_for('static', filename='assets/seedling.png') }}" alt="Mom"/>
+            </label>
+            <label>
+              <input 
+                  class="form-control" 
+                  type="radio" 
+                  id="infant" 
+                  name="category"
+                  value="Infant"
+                  data-age="infant"
+                  required
+              />
+              <img class="avatar-img" src="{{ url_for('static', filename='assets/babySprout.png') }}" alt="Mom"/>
+          </label>
+          <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="toddler" 
+                name="category"
+                value="Toddler"
+                data-age="toddler"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/buddingSprout.png') }}" alt="Mom"/>
+        </label>
+            <label>
+              <input 
+                  class="form-control" 
+                  type="radio" 
+                  id="child" 
+                  name="category"
+                  value="Child"
+                  data-age="Child"
+                  required
+              />
+              <img class="avatar-img" src="{{ url_for('static', filename='assets/firstFlower.png') }}" alt="Mom"/>
+          </label>
+           
+        </div>
+        <br>
+
+        <!-- now for types of listings -->
+        <div class="categoryOptions">
+          <label for="image">Product Image</label>
+       
+          <br>
+          <label>
+              <input 
+                  class="form-control" 
+                  type="radio" 
+                  id="toys" 
+                  name="category"
+                  value="toys"
+                  product-type="toys"
+                  required
+              />
+              <img class="avatar-img" src="{{ url_for('static', filename='assets/bear.png') }}" alt="Mom"/>
+          </label>
+          <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="clothes" 
+                name="category"
+                value="clothes"
+                product-type="clothes"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/clothes.png') }}" alt="Mom"/>
+        </label>
+        <label>
+          <input 
+              class="form-control" 
+              type="radio" 
+              id="furniture" 
+              name="category"
+              value="furniture"
+              product-type="furniture"
+              required
+          />
+          <img class="avatar-img" src="{{ url_for('static', filename='assets/furniture.png') }}" alt="Mom"/>
+      </label>
+          <label>
+            <input 
+                class="form-control" 
+                type="radio" 
+                id="materials_misc" 
+                name="category"
+                value="materials_misc"
+                product-type="materials_misc"
+                required
+            />
+            <img class="avatar-img" src="{{ url_for('static', filename='assets/misc.png') }}" alt="Mom"/>
+        </label>
+         
+      </div>
+        
+        <button type="submit">Submit listing!</button>
+    </div>
+    
+</form>
+
+{% endblock content %}

@@ -19,8 +19,8 @@
         <a href="/forum">
         <img 
             id="logo" 
-            src="{{ url_for('static', filename='assets/handMeDownTag.png') }}" 
-            alt="The Hand Me Down sprout logo and headline"
+            src="{{ url_for('static', filename='assets/babyBudsLogo.png') }}" 
+            alt="The Baby Buds logo and headline"
         />
         </a>
         <!-- NAVBAR Made by Erik Terwan 24th of November 2015 MIT License -->
@@ -39,10 +39,12 @@
                     <a href="/profile"><li>Profile</li></a>
                     <br>
                 {% endif %}
+                {% if not user.is_authenticated %}
                 <a href="/login"><li>Login</li></a>
                 <br>
                 <a href="/signup"><li>Signup</li></a>
                 <br>
+                {% endif %}
                 {% if user.is_authenticated %}
                     <a href="/logout"><li>Logout</li></a>
                 {% endif %}

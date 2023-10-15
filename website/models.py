@@ -1,6 +1,7 @@
 from . import db 
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from sqlalchemy.ext.hybrid import hybrid_property
 
 # Mom, Expert, Comment, Product, Post
 
@@ -11,7 +12,8 @@ class Mom(db.Model, UserMixin):
     password = db.Column(db.String(100), unique=False)
     posts = db.relationship('Post', backref='mom', passive_deletes=True)
     products = db.relationship('Product', backref='mom', passive_deletes=True)
-    profile_pic = db.Column(db.String(100), default="sprout0.png")
+    profile_pic = db.Column(db.String(100), default="flowers.png")
+    can_comment = db.Column(db.String(6), default="false")
     
     
 class Expert(db.Model, UserMixin):
@@ -21,7 +23,11 @@ class Expert(db.Model, UserMixin):
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     comments = db.relationship('Comment', backref='expert', passive_deletes=True)
+    can_comment = db.Column(db.String(6), default="true")
 
+    @hybrid_property
+    def username(self):
+        return f"{self.first_name} {self.last_name}"
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,7 +47,7 @@ class Product(db.Model):
     mauthor = db.Column(db.Integer, db.ForeignKey(
         'mom.id', ondelete="CASCADE"), nullable=False)
     price = db.Column(db.Integer(), nullable=False)
-    tags = db.Column(db.String(200)) # String separated by commas
+    tags = db.Column(db.String(200))
     img = db.Column(db.String(200))
 
 

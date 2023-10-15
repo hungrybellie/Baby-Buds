@@ -24,12 +24,37 @@ def profile():
 @views.route("/hand-me-down", methods=["GET", "POST"])
 def hand_me_down():
     products = Product.query.all()
-    return render_template("hand_me_down.html", products=products)
+    return render_template("hand_me_down.html", products=products, user=current_user)
 
 
 @views.route("/signup")
 def signup():
     return render_template('mom_or_expert.html', user=current_user)
+
+
+#------------------------------------------------------------------------
+# FORUM PAGES
+#------------------------------------------------------------------------
+
+@views.route("/baby-health")
+def baby_health():
+    posts = Post.query.filter_by(category='Baby Health').all()
+    return render_template("forum.html", user=current_user, posts=posts)
+
+@views.route("/mom-health")
+def mom_health():
+    posts = Post.query.filter_by(category='Mom Health').all()
+    return render_template("forum.html", user=current_user, posts=posts)
+
+@views.route("/tips-and-tricks")
+def tips_and_tricks():
+    posts = Post.query.filter_by(category='Tips and Tricks').all()
+    return render_template("forum.html", user=current_user, posts=posts)
+
+@views.route("/support")
+def support():
+    posts = Post.query.filter_by(category='Support').all()
+    return render_template("forum.html", user=current_user, posts=posts)
 
 #------------------------------------------------------------------------
 # POSTS
@@ -40,11 +65,14 @@ def create_post():
     if request.method == "POST":
         post_title = request.form.get('title')
         post_content = request.form.get('content')
+        category = request.form.get('category')
+
+        print(category)
 
         if not post_content:
             flash('Post cannot be empty', category='error')
         else:
-            post = Post(title=post_title, content=post_content, mauthor=current_user.id)
+            post = Post(title=post_title, content=post_content, mauthor=current_user.id, category=category)
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
@@ -56,11 +84,11 @@ def create_post():
 @views.route("/delete-post/<post_id>")
 @login_required
 def delete_post(post_id):
-    post = Comment.query.filter_by(id=post_id).first()
+    post = Post.query.filter_by(id=post_id).first()
 
     if not post:
         flash('Post does not exist.', category='error')
-    elif current_user.id != post.mauthor:
+    elif current_user.id != post.mom.id:
         flash('You do not have permission to delete this post.', category='error')
     else:
         db.session.delete(post)
@@ -74,7 +102,7 @@ def delete_post(post_id):
 @views.route("/create-comment/<post_id>", methods=['POST'])
 @login_required
 def create_comment(post_id):
-    text = request.form.get('text')
+    text = request.form.get('comment')
 
     if not text:
         flash('Comment cannot be empty.', category='error')
@@ -132,7 +160,7 @@ def list_product():
             flash('Product created!', category='success')
             return redirect(url_for('views.hand_me_down'))
 
-    return render_template('hand_me_down.html', user=current_user)
+    return render_template('list_product.html', user=current_user)
 
 
 @views.route("/delete-product/<product_id>")

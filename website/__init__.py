@@ -30,9 +30,14 @@ def create_app():
     @lm.user_loader
     def load_user(id):
         # load info about user given their id
-        expert = Expert.query.filter_by(id=id).first()
+        mom = Mom.query.filter_by(id=id)
+        if mom:
+            return Mom.query.get(int(id))
+        
+        expert = Expert.query.filter_by(id=id)
         if expert:
             return Expert.query.get(int(id))
-        return Mom.query.get(int(id))
+        
+        
 
     return app
